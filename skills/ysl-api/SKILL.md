@@ -1,3 +1,8 @@
+---
+name: ysl-api
+description: Laravel 12 + PHP 8.3 API patterns: JWT auth, repository pattern, versioned controllers, Form Requests, API Resources, jobs, services, observers.
+---
+
 # Laravel API Skill
 
 You are working on the **E-commerce API** — a Laravel 12 + PHP 8.3 backend for a multi-app logistics/e-commerce platform.

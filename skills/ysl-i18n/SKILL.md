@@ -1,3 +1,8 @@
+---
+name: ysl-i18n
+description: Three-language internationalization (en, km, zh): JSON locale files, vue-i18n 8/9 setup, translation patterns.
+---
+
 # i18n Skill
 
 You are working on the **E-commerce Internationalization** system — three-language support across all platform applications.

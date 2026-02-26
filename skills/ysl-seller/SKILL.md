@@ -1,3 +1,8 @@
+---
+name: ysl-seller
+description: Vue 3 + CoreUI seller portal: Composition API, Pinia stores, composables, Vue Router 4 with role-based access, form validation.
+---
+
 # Vue Seller UI Skill
 
 You are working on the **E-commerce Seller Portal** — a Vue 3 + CoreUI application for sellers/editors to manage products, orders, and shop settings.

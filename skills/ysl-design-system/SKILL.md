@@ -1,3 +1,8 @@
+---
+name: ysl-design-system
+description: Brand standards: primary color #129748, CSS conventions, component structure patterns for admin and seller apps.
+---
+
 # Design System Skill
 
 You are working on the **E-commerce Design System** — brand standards and CSS conventions shared across the admin panel (Bootstrap-Vue) and seller portal (CoreUI).

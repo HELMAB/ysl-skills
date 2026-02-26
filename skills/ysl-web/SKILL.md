@@ -1,3 +1,8 @@
+---
+name: ysl-web
+description: Laravel 12 public website: API gateway pattern, Guzzle HTTP client, Blade templates, device token management.
+---
+
 # Web Public Skill
 
 You are working on the **E-commerce Public Website** — a Laravel 12 + PHP 8.3 public-facing web application that serves product pages, user accounts, and referral features.

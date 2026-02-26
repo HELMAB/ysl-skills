@@ -1,3 +1,8 @@
+---
+name: ysl-admin
+description: Vue 2 + Bootstrap-Vue admin panel: Vuex 3 modules, component patterns, Vue Router 3, Vee-Validate 3 forms.
+---
+
 # Vue Admin Skill
 
 You are working on the **E-commerce Admin Panel** — a Vue 2 + Bootstrap-Vue back-office application for logistics/e-commerce management.
