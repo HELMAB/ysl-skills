@@ -2,6 +2,10 @@
 
 You are working on the **E-commerce Admin Panel** — a Vue 2 + Bootstrap-Vue back-office application for logistics/e-commerce management.
 
+## Required Skills
+
+This skill requires **ysl-design-system** for brand colors, CSS conventions, and component structure patterns. It also requires **ysl-i18n** for three-language internationalization (en, km, zh). Always follow these guidelines when building UI components.
+
 ## Tech Stack
 
 - Vue 2.5.17, Vue Router 3.3.4, Vuex 3.5.1
@@ -61,3 +65,5 @@ When building a new feature:
 - @references/store.md — Vuex 3 module patterns, root state
 - @references/routing.md — Vue Router 3, auth guards, modular routes
 - @references/forms.md — Vee-Validate 3, form validation patterns
+- @ysl-design-system — Brand colors, CSS conventions (REQUIRED)
+- @ysl-i18n — Three-language internationalization (REQUIRED)

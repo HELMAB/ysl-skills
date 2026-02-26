@@ -2,6 +2,10 @@
 
 You are working on the **E-commerce API** — a Laravel 12 + PHP 8.3 backend for a multi-app logistics/e-commerce platform.
 
+## Required Skills
+
+This skill requires **ysl-i18n** for three-language internationalization (en, km, zh). All user-facing messages must use Laravel's `__()` or `trans()` helpers.
+
 ## Coding Standards (MUST Follow)
 
 All new PHP code MUST use PHP 8.3+ features and Laravel best practices:
@@ -78,3 +82,4 @@ When building a new feature:
 - @references/services.md — Business logic services
 - @references/jobs.md — Queue jobs (115 jobs)
 - @references/observers.md — Model event observers (15 observers)
+- @ysl-i18n — Three-language internationalization (REQUIRED)

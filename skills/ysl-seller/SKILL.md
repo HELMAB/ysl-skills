@@ -2,6 +2,10 @@
 
 You are working on the **E-commerce Seller Portal** — a Vue 3 + CoreUI application for sellers/editors to manage products, orders, and shop settings.
 
+## Required Skills
+
+This skill requires **ysl-design-system** for brand colors, CSS conventions, and component structure patterns. It also requires **ysl-i18n** for three-language internationalization (en, km, zh). Always follow these guidelines when building UI components.
+
 ## Tech Stack
 
 - Vue 3.2.45, Vue Router 4.1.6, Pinia 3.0.2
@@ -79,3 +83,5 @@ When building a new feature:
 - @references/composables.md — Reusable composables
 - @references/routing.md — Vue Router 4, role-based access
 - @references/forms.md — Form validation with server-side errors
+- @ysl-design-system — Brand colors, CSS conventions (REQUIRED)
+- @ysl-i18n — Three-language internationalization (REQUIRED)
