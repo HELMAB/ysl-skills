@@ -1,37 +1,54 @@
 {
-  "$schema": "https://cdn.jsdelivr.net/gh/anthropics/claude-code@main/.claude-plugin/marketplace.schema.json",
   "name": "ysl-skills",
   "description": "AI agent skills for the E-commerce project ecosystem — Laravel API, Vue 2 admin, Vue 3 seller UI, public web, design system, and i18n patterns.",
-  "skills": [
+  "plugins": [
     {
       "name": "ysl-api",
+      "source": "./",
       "description": "Laravel 12 + PHP 8.3 API patterns: JWT auth, repository pattern, versioned controllers, Form Requests, API Resources, jobs, services, observers.",
-      "path": "skills/ysl-api/SKILL.md"
+      "skills": [
+        "./skills/ysl-api/SKILL.md"
+      ]
     },
     {
       "name": "ysl-admin",
+      "source": "./",
       "description": "Vue 2 + Bootstrap-Vue admin panel: Vuex 3 modules, component patterns, Vue Router 3, Vee-Validate 3 forms.",
-      "path": "skills/ysl-admin/SKILL.md"
+      "skills": [
+        "./skills/ysl-admin/SKILL.md"
+      ]
     },
     {
       "name": "ysl-seller",
+      "source": "./",
       "description": "Vue 3 + CoreUI seller portal: Composition API, Pinia stores, composables, Vue Router 4 with role-based access, form validation.",
-      "path": "skills/ysl-seller/SKILL.md"
+      "skills": [
+        "./skills/ysl-seller/SKILL.md"
+      ]
     },
     {
       "name": "ysl-web",
+      "source": "./",
       "description": "Laravel 12 public website: API gateway pattern, Guzzle HTTP client, Blade templates, device token management.",
-      "path": "skills/ysl-web/SKILL.md"
+      "skills": [
+        "./skills/ysl-web/SKILL.md"
+      ]
     },
     {
       "name": "ysl-design-system",
+      "source": "./",
       "description": "Brand standards: primary color #129748, CSS conventions, component structure patterns for admin and seller apps.",
-      "path": "skills/ysl-design-system/SKILL.md"
+      "skills": [
+        "./skills/ysl-design-system/SKILL.md"
+      ]
     },
     {
       "name": "ysl-i18n",
+      "source": "./",
       "description": "Three-language internationalization (en, km, zh): JSON locale files, vue-i18n 8/9 setup, translation patterns.",
-      "path": "skills/ysl-i18n/SKILL.md"
+      "skills": [
+        "./skills/ysl-i18n/SKILL.md"
+      ]
     }
   ]
 }
