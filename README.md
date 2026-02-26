@@ -1,6 +1,6 @@
-# ysl-skills
+# E-commerce Skills
 
-AI agent skills for the E-commerce project ecosystem. Provides context-aware coding assistance for a multi-app logistics/e-commerce platform.
+AI agent skills for the E-commerce project ecosystem. Provides context-aware coding assistance for a multi-app logistics/E-commerce platform.
 
 ## Available Skills
 
