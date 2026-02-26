@@ -1,6 +1,7 @@
 ---
 name: ysl-i18n
 description: "Three-language internationalization (en, km, zh): JSON locale files, vue-i18n 8/9 setup, translation patterns."
+color: "#129748"
 ---
 
 # i18n Skill

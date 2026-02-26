@@ -62,6 +62,24 @@
         "./skills/ysl-i18n"
       ],
       "category": "Internationalization"
+    },
+    {
+      "name": "ysl-feature",
+      "source": "ysl-feature",
+      "description": "Comprehensive guide for adding new features to the YSL project following established conventions and best practices.",
+      "skills": [
+        "./skills/ysl-feature"
+      ],
+      "category": "Feature Implementation"
+    },
+    {
+      "name": "ysl-code-reviewer",
+      "source": "ysl-code-reviewer",
+      "description": "Comprehensive guide for reviewing code in the YSL project following established conventions and best practices.",
+      "skills": [
+        "./skills/ysl-code-reviewer"
+      ],
+      "category": "Code Review"
     }
   ]
 }

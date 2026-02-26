@@ -1,6 +1,7 @@
 ---
 name: ysl-seller
 description: "Vue 3 + CoreUI seller portal: Composition API, Pinia stores, composables, Vue Router 4 with role-based access, form validation."
+color: "#129748"
 ---
 
 # Vue Seller UI Skill

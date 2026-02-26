@@ -1,6 +1,7 @@
 ---
 name: ysl-web
 description: "Laravel 12 public website: API gateway pattern, Guzzle HTTP client, Blade templates, device token management."
+color: "#129748"
 ---
 
 # Web Public Skill

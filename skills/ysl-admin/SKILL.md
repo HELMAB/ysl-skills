@@ -1,6 +1,7 @@
 ---
 name: ysl-admin
 description: "Vue 2 + Bootstrap-Vue admin panel: Vuex 3 modules, component patterns, Vue Router 3, Vee-Validate 3 forms."
+color: "#129748"
 ---
 
 # Vue Admin Skill

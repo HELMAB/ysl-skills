@@ -1,6 +1,7 @@
 ---
 name: ysl-api
 description: "Laravel 12 + PHP 8.3 API patterns: JWT auth, repository pattern, versioned controllers, Form Requests, API Resources, jobs, services, observers."
+color: "#129748"
 ---
 
 # Laravel API Skill
