@@ -3,8 +3,6 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![GitHub stars](https://img.shields.io/github/stars/helmab/ysl-skills)](https://github.com/helmab/ysl-skills/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/helmab/ysl-skills)](https://github.com/helmab/ysl-skills/network/members)
-[![GitHub issues](https://img.shields.io/github/issues/helmab/ysl-skills)](https://github.com/helmab/ysl-skills/issues)
-[![GitHub last commit](https://img.shields.io/github/last-commit/helmab/ysl-skills)](https://github.com/helmab/ysl-skills/commits)
 
 AI agent skills for the E-commerce project ecosystem. Provides context-aware coding assistance for a multi-app logistics/E-commerce platform.
 
