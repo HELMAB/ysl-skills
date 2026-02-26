@@ -1,6 +1,6 @@
 ---
 name: ysl-design-system
-description: Brand standards: primary color #129748, CSS conventions, component structure patterns for admin and seller apps.
+description: "Brand standards: primary color #129748, CSS conventions, component structure patterns for admin and seller apps."
 ---
 
 # Design System Skill

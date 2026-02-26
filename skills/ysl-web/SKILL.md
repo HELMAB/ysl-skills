@@ -1,6 +1,6 @@
 ---
 name: ysl-web
-description: Laravel 12 public website: API gateway pattern, Guzzle HTTP client, Blade templates, device token management.
+description: "Laravel 12 public website: API gateway pattern, Guzzle HTTP client, Blade templates, device token management."
 ---
 
 # Web Public Skill
