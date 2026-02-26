@@ -6,25 +6,32 @@ AI agent skills for the Youngsia project ecosystem. Provides context-aware codin
 
 | Skill | Description |
 |-------|-------------|
-| **laravel-api** | Laravel 12 + PHP 8.3 API: JWT auth, repository pattern, versioned controllers |
-| **vue-admin** | Vue 2 + Bootstrap-Vue admin panel: Vuex 3, component patterns, forms |
-| **vue-seller-ui** | Vue 3 + CoreUI seller portal: Pinia, Composition API, composables |
-| **design-system** | Brand standards, CSS conventions, component structure |
-| **acl** | Role-based access control: 14 roles, middleware, route guards |
-| **i18n** | Three-language support (en, km, zh): vue-i18n, locale patterns |
+| **laravel-api** | Laravel 12 + PHP 8.3 API patterns: JWT auth, repository pattern, versioned controllers, Form Requests, API Resources, constants |
+| **vue-admin** | Vue 2 + Bootstrap-Vue admin panel: Vuex 3 modules, component patterns, Vue Router 3, Vee-Validate 3 forms |
+| **vue-seller-ui** | Vue 3 + CoreUI seller portal: Composition API, Pinia stores, composables, Vue Router 4 with role-based access |
+| **design-system** | Brand standards: primary color #129748, CSS conventions, component structure patterns for admin and seller apps |
+| **acl** | Access control: 14 predefined roles, role-based middleware, frontend route guards, permission enforcement |
+| **i18n** | Three-language internationalization (en, km, zh): JSON locale files, vue-i18n 8/9 setup, translation patterns |
 
 ## Installation
 
 ```bash
-claude skill install /path/to/ysl-skills
+claude skill install helmab/ysl-skills
 ```
 
-Or add to your project's `.claude/settings.json`:
+## Claude Code Marketplace
 
-```json
-{
-  "skills": ["/path/to/ysl-skills"]
-}
+An alternative for Claude Code users:
+
+```sh
+# Add marketplace
+/plugin marketplace add helmab/ysl-skills
+
+# Install individual skills
+/plugin install create-adaptable-composable@ysl-skills
+
+# Install multiple skills
+/plugin install create-adaptable-composable@ysl-skills vue-best-practices@ysl-skills
 ```
 
 ## Platform Overview
