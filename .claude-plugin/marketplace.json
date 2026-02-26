@@ -1,4 +1,7 @@
 {
+  "metadata": {
+    "pluginRoot": "./skills"
+  },
   "name": "ysl-skills",
   "description": "AI agent skills for the E-commerce project ecosystem — Laravel API, Vue 2 admin, Vue 3 seller UI, public web, design system, and i18n patterns.",
   "owner": {
@@ -8,7 +11,7 @@
   "plugins": [
     {
       "name": "ysl-api",
-      "source": "./",
+      "source": "ysl-api",
       "description": "Laravel 12 + PHP 8.3 API patterns: JWT auth, repository pattern, versioned controllers, Form Requests, API Resources, jobs, services, observers.",
       "skills": [
         "./skills/ysl-api"
@@ -17,7 +20,7 @@
     },
     {
       "name": "ysl-admin",
-      "source": "./",
+      "source": "ysl-admin",
       "description": "Vue 2 + Bootstrap-Vue admin panel: Vuex 3 modules, component patterns, Vue Router 3, Vee-Validate 3 forms.",
       "skills": [
         "./skills/ysl-admin"
@@ -26,7 +29,7 @@
     },
     {
       "name": "ysl-seller",
-      "source": "./",
+      "source": "ysl-seller",
       "description": "Vue 3 + CoreUI seller portal: Composition API, Pinia stores, composables, Vue Router 4 with role-based access, form validation.",
       "skills": [
         "./skills/ysl-seller"
@@ -35,7 +38,7 @@
     },
     {
       "name": "ysl-web",
-      "source": "./",
+      "source": "ysl-web",
       "description": "Laravel 12 public website: API gateway pattern, Guzzle HTTP client, Blade templates, device token management.",
       "skills": [
         "./skills/ysl-web"
@@ -44,7 +47,7 @@
     },
     {
       "name": "ysl-design-system",
-      "source": "./",
+      "source": "ysl-design-system",
       "description": "Brand standards: primary color #129748, CSS conventions, component structure patterns for admin and seller apps.",
       "skills": [
         "./skills/ysl-design-system"
@@ -53,7 +56,7 @@
     },
     {
       "name": "ysl-i18n",
-      "source": "./",
+      "source": "ysl-i18n",
       "description": "Three-language internationalization (en, km, zh): JSON locale files, vue-i18n 8/9 setup, translation patterns.",
       "skills": [
         "./skills/ysl-i18n"
