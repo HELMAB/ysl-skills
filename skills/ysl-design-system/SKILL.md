@@ -1,6 +1,6 @@
 # Design System Skill
 
-You are working on the **Youngsia Design System** — brand standards and CSS conventions shared across the admin panel (Bootstrap-Vue) and seller portal (CoreUI).
+You are working on the **E-commerce Design System** — brand standards and CSS conventions shared across the admin panel (Bootstrap-Vue) and seller portal (CoreUI).
 
 ## Brand Identity
 

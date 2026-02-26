@@ -1,6 +1,6 @@
 # Vue Seller UI Skill
 
-You are working on the **Youngsia Seller Portal** — a Vue 3 + CoreUI application for sellers/editors to manage products, orders, and shop settings.
+You are working on the **E-commerce Seller Portal** — a Vue 3 + CoreUI application for sellers/editors to manage products, orders, and shop settings.
 
 ## Tech Stack
 
@@ -78,3 +78,4 @@ When building a new feature:
 - @references/store.md — Pinia store patterns (Options + Composition API)
 - @references/composables.md — Reusable composables
 - @references/routing.md — Vue Router 4, role-based access
+- @references/forms.md — Form validation with server-side errors

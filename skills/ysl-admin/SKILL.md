@@ -1,6 +1,6 @@
 # Vue Admin Skill
 
-You are working on the **Youngsia Admin Panel** — a Vue 2 + Bootstrap-Vue back-office application for logistics/e-commerce management.
+You are working on the **E-commerce Admin Panel** — a Vue 2 + Bootstrap-Vue back-office application for logistics/e-commerce management.
 
 ## Tech Stack
 

@@ -1,11 +1,11 @@
 {
   "$schema": "https://cdn.jsdelivr.net/gh/anthropics/claude-code@main/.claude-plugin/marketplace.schema.json",
   "name": "ysl-skills",
-  "description": "AI agent skills for the Youngsia project ecosystem — Laravel API, Vue 2 admin, Vue 3 seller UI, design system, and i18n patterns.",
+  "description": "AI agent skills for the E-commerce project ecosystem — Laravel API, Vue 2 admin, Vue 3 seller UI, public web, design system, and i18n patterns.",
   "skills": [
     {
       "name": "ysl-api",
-      "description": "Laravel 12 + PHP 8.3 API patterns: JWT auth, repository pattern, versioned controllers, Form Requests, API Resources, constants.",
+      "description": "Laravel 12 + PHP 8.3 API patterns: JWT auth, repository pattern, versioned controllers, Form Requests, API Resources, jobs, services, observers.",
       "path": "skills/ysl-api/SKILL.md"
     },
     {
@@ -15,8 +15,13 @@
     },
     {
       "name": "ysl-seller",
-      "description": "Vue 3 + CoreUI seller portal: Composition API, Pinia stores, composables, Vue Router 4 with role-based access.",
+      "description": "Vue 3 + CoreUI seller portal: Composition API, Pinia stores, composables, Vue Router 4 with role-based access, form validation.",
       "path": "skills/ysl-seller/SKILL.md"
+    },
+    {
+      "name": "ysl-web",
+      "description": "Laravel 12 public website: API gateway pattern, Guzzle HTTP client, Blade templates, device token management.",
+      "path": "skills/ysl-web/SKILL.md"
     },
     {
       "name": "ysl-design-system",

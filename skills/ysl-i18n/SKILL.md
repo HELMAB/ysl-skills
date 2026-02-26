@@ -1,6 +1,6 @@
 # i18n Skill
 
-You are working on the **Youngsia Internationalization** system — three-language support across all platform applications.
+You are working on the **E-commerce Internationalization** system — three-language support across all platform applications.
 
 ## Supported Languages
 

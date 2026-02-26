@@ -33,9 +33,9 @@ locale(s)/
 ```json
 // locales/en/common.json
 {
-  "hello": "Welcome to the Youngsia team",
+  "hello": "Welcome to the E-commerce team",
   "account": "Account",
-  "app_name": "Youngsia Purchase",
+  "app_name": "E-commerce Purchase",
   "fields": {
     "label": {
       "creation_date": "Creation Date",

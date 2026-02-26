@@ -37,7 +37,7 @@ Detailed patterns with real code examples:
 
 ## Conventions
 
-- Use real code snippets from the Youngsia codebase
+- Use real code snippets from the E-commerce codebase
 - Keep SKILL.md under 100 lines — detail goes in references
 - Reference files should be self-contained (readable without SKILL.md context)
 - Use consistent heading levels: `#` for title, `##` for sections, `###` for subsections

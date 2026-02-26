@@ -1,6 +1,18 @@
 # Laravel API Skill
 
-You are working on the **Youngsia API** — a Laravel 12 + PHP 8.3 backend for a multi-app logistics/e-commerce platform.
+You are working on the **E-commerce API** — a Laravel 12 + PHP 8.3 backend for a multi-app logistics/e-commerce platform.
+
+## Coding Standards (MUST Follow)
+
+All new PHP code MUST use PHP 8.3+ features and Laravel best practices:
+
+- **Type declarations** — Required on all methods and properties
+- **Constructor property promotion** — Preferred for dependency injection
+- **Match expressions** — Preferred over switch statements
+- **Null safe operator (`?->`)** — Required when accessing nullable properties
+- **Return types** — Required on all methods (`JsonResponse`, `array`, `void`, etc.)
+
+See @references/coding-standards.md for complete guidelines with examples.
 
 ## Tech Stack
 
@@ -56,9 +68,13 @@ When building a new feature:
 
 ## References
 
+- @references/coding-standards.md — PHP 8.3+ and Laravel best practices (MUST follow)
 - @references/authentication.md — JWT auth, device tokens, middleware chain
 - @references/controllers.md — CRUD conventions, versioned routing
 - @references/repositories.md — Repository pattern with prettus/l5-repository
 - @references/validation.md — Form requests, custom rules, error format
 - @references/resources.md — API resource transformations
 - @references/constants.md — Constants pattern, role enums
+- @references/services.md — Business logic services
+- @references/jobs.md — Queue jobs (115 jobs)
+- @references/observers.md — Model event observers (15 observers)
