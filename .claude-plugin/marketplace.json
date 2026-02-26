@@ -10,32 +10,37 @@
       "name": "ysl-api",
       "description": "Laravel 12 + PHP 8.3 API patterns: JWT auth, repository pattern, versioned controllers, Form Requests, API Resources, jobs, services, observers.",
       "source": "./skills/ysl-api",
-      "category": "backend"
+      "category": "API Server"
     },
     {
       "name": "ysl-admin",
       "description": "Vue 2 + Bootstrap-Vue admin panel: Vuex 3 modules, component patterns, Vue Router 3, Vee-Validate 3 forms.",
-      "source": "./skills/ysl-admin"
+      "source": "./skills/ysl-admin",
+      "category": "Admin UI"
     },
     {
       "name": "ysl-seller",
       "description": "Vue 3 + CoreUI seller portal: Composition API, Pinia stores, composables, Vue Router 4 with role-based access, form validation.",
-      "source": "./skills/ysl-seller"
+      "source": "./skills/ysl-seller",
+      "category": "Seller UI"
     },
     {
       "name": "ysl-web",
       "description": "Laravel 12 public website: API gateway pattern, Guzzle HTTP client, Blade templates, device token management.",
-      "source": "./skills/ysl-web"
+      "source": "./skills/ysl-web",
+      "category": "Website"
     },
     {
       "name": "ysl-design-system",
       "description": "Brand standards: primary color #129748, CSS conventions, component structure patterns for admin and seller apps.",
-      "source": "./skills/ysl-design-system"
+      "source": "./skills/ysl-design-system",
+      "category": "Design System"
     },
     {
       "name": "ysl-i18n",
       "description": "Three-language internationalization (en, km, zh): JSON locale files, vue-i18n 8/9 setup, translation patterns.",
-      "source": "./skills/ysl-i18n"
+      "source": "./skills/ysl-i18n",
+      "category": "Internationalization"
     }
   ]
 }
