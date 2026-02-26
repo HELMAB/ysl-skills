@@ -8,38 +8,56 @@
   "plugins": [
     {
       "name": "ysl-api",
+      "source": "./",
       "description": "Laravel 12 + PHP 8.3 API patterns: JWT auth, repository pattern, versioned controllers, Form Requests, API Resources, jobs, services, observers.",
-      "source": "./skills/ysl-api",
+      "skills": [
+        "./skills/ysl-api"
+      ],
       "category": "API Server"
     },
     {
       "name": "ysl-admin",
+      "source": "./",
       "description": "Vue 2 + Bootstrap-Vue admin panel: Vuex 3 modules, component patterns, Vue Router 3, Vee-Validate 3 forms.",
-      "source": "./skills/ysl-admin",
+      "skills": [
+        "./skills/ysl-admin"
+      ],
       "category": "Admin UI"
     },
     {
       "name": "ysl-seller",
+      "source": "./",
       "description": "Vue 3 + CoreUI seller portal: Composition API, Pinia stores, composables, Vue Router 4 with role-based access, form validation.",
-      "source": "./skills/ysl-seller",
+      "skills": [
+        "./skills/ysl-seller"
+      ],
       "category": "Seller UI"
     },
     {
       "name": "ysl-web",
+      "source": "./",
       "description": "Laravel 12 public website: API gateway pattern, Guzzle HTTP client, Blade templates, device token management.",
-      "source": "./skills/ysl-web",
+      "skills": [
+        "./skills/ysl-web"
+      ],
       "category": "Website"
     },
     {
       "name": "ysl-design-system",
+      "source": "./",
       "description": "Brand standards: primary color #129748, CSS conventions, component structure patterns for admin and seller apps.",
-      "source": "./skills/ysl-design-system",
+      "skills": [
+        "./skills/ysl-design-system"
+      ],
       "category": "Design System"
     },
     {
       "name": "ysl-i18n",
+      "source": "./",
       "description": "Three-language internationalization (en, km, zh): JSON locale files, vue-i18n 8/9 setup, translation patterns.",
-      "source": "./skills/ysl-i18n",
+      "skills": [
+        "./skills/ysl-i18n"
+      ],
       "category": "Internationalization"
     }
   ]
