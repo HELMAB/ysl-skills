@@ -7,7 +7,7 @@
       "source": "./",
       "description": "Laravel 12 + PHP 8.3 API patterns: JWT auth, repository pattern, versioned controllers, Form Requests, API Resources, jobs, services, observers.",
       "skills": [
-        "./skills/ysl-api/SKILL.md"
+        "./skills/ysl-api"
       ]
     },
     {
@@ -15,7 +15,7 @@
       "source": "./",
       "description": "Vue 2 + Bootstrap-Vue admin panel: Vuex 3 modules, component patterns, Vue Router 3, Vee-Validate 3 forms.",
       "skills": [
-        "./skills/ysl-admin/SKILL.md"
+        "./skills/ysl-admin"
       ]
     },
     {
@@ -23,7 +23,7 @@
       "source": "./",
       "description": "Vue 3 + CoreUI seller portal: Composition API, Pinia stores, composables, Vue Router 4 with role-based access, form validation.",
       "skills": [
-        "./skills/ysl-seller/SKILL.md"
+        "./skills/ysl-seller"
       ]
     },
     {
@@ -31,7 +31,7 @@
       "source": "./",
       "description": "Laravel 12 public website: API gateway pattern, Guzzle HTTP client, Blade templates, device token management.",
       "skills": [
-        "./skills/ysl-web/SKILL.md"
+        "./skills/ysl-web"
       ]
     },
     {
@@ -39,7 +39,7 @@
       "source": "./",
       "description": "Brand standards: primary color #129748, CSS conventions, component structure patterns for admin and seller apps.",
       "skills": [
-        "./skills/ysl-design-system/SKILL.md"
+        "./skills/ysl-design-system"
       ]
     },
     {
@@ -47,7 +47,7 @@
       "source": "./",
       "description": "Three-language internationalization (en, km, zh): JSON locale files, vue-i18n 8/9 setup, translation patterns.",
       "skills": [
-        "./skills/ysl-i18n/SKILL.md"
+        "./skills/ysl-i18n"
       ]
     }
   ]
