@@ -6,6 +6,22 @@
 - **Descriptive names**: `AlipayAccountTransactionShowLogModal.vue`
 - Views vs Components: views are page-level, components are reusable
 
+## Component Architecture Rules
+
+### Section Separation
+
+- **Do not put all sections inside a single component**
+- Each logical section should be its own component
+- Feature-specific sub-components go in `views/{feature}/components/`
+- This improves maintainability, reusability, and testability
+
+### CSS Rules
+
+- **Do not write scoped styles inside Vue components** (`<style scoped>` is forbidden)
+- All component styles must be in the global main CSS file
+- **Do not create additional CSS files**
+- Use existing CSS classes from Bootstrap Vue and the design system
+
 ## View Component Structure
 
 ```
@@ -127,6 +143,8 @@ this.getYslDefaultPagination()   // Default pagination object
 
 - Use **feather icons**: `<span class="feather feather-plus-square" />`
 - Use **Bootstrap Vue** components: `<b-table>`, `<b-modal>`, `<b-pagination>`
-- Use **$t()** for all user-facing text
+- Use **$t()** for all user-facing text (i18n in en, km, zh)
 - Container class convention: `template-container {feature}-container`
 - Action box + Content box layout structure
+- **No scoped styles** — use global CSS only
+- **Separate sections** into sub-components for maintainability

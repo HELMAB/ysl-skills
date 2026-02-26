@@ -9,7 +9,38 @@ You are working on the **E-commerce Admin Panel** — a Vue 2 + Bootstrap-Vue ba
 
 ## Required Skills
 
-This skill requires **ysl-design-system** for brand colors, CSS conventions, and component structure patterns. It also requires **ysl-i18n** for three-language internationalization (en, km, zh). Always follow these guidelines when building UI components.
+- **frontend-design** — Use when working on UI/UX design
+- **frontend-development** — Use when working on development tasks
+- **ysl-design-system** — Brand colors, CSS conventions, component structure patterns
+- **ysl-i18n** — Three-language internationalization (en, km, zh)
+
+## Rules
+
+### General Rules
+
+- Follow Vue 2 best practices
+- Ensure ESLint rules are followed
+- Don't create any markdown files
+- Must have todo list and mark as completed after completing each point
+- After completing a task, write a summary of changes and suggest improvements
+
+### CSS Rules
+
+- **Do not write scoped styles inside Vue components**
+- All component styles must be moved to the global main CSS file or appropriate CSS modules
+- **Do not create additional CSS files**
+
+### Component Rules
+
+- **Do not put all sections inside a single component**
+- Separate each section into its own component for better maintainability and reusability
+- Feature-specific components go in `views/{feature}/components/`
+
+### i18n Rules
+
+- Translate all new hardcoded strings for i18n support
+- Support all three languages: English (en), Chinese (zh), and Khmer (km)
+- Use `$t('key')` for all user-facing text
 
 ## Tech Stack
 

@@ -9,7 +9,18 @@ You are working on the **E-commerce API** — a Laravel 12 + PHP 8.3 backend for
 
 ## Required Skills
 
-This skill requires **ysl-i18n** for three-language internationalization (en, km, zh). All user-facing messages must use Laravel's `__()` or `trans()` helpers.
+- **ysl-i18n** — Three-language internationalization (en, km, zh). All user-facing messages must use Laravel's `__()` or `trans()` helpers.
+
+## Rules
+
+### General Rules
+
+- Follow best practices of Laravel framework
+- Follow the code style of Young Sia API project
+- Don't create any markdown files
+- Don't ask to write tests
+- Must have todo list and mark as completed after completing each point
+- After completing a task, write a summary of changes and suggest improvements
 
 ## Coding Standards (MUST Follow)
 
