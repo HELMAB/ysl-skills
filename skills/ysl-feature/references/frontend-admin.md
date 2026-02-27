@@ -9,25 +9,34 @@
 
 ```vue
 <template>
-  <li v-if="hasPermission">
-    <router-link :to="{ name: 'resource.index' }" class="menu-item">
+  <div
+    v-if="isAdmin"
+    class="nav__item"
+  >
+    <router-link
+      :to="{ name: 'resource.index' }"
+      class="link"
+    >
       <i class="icon-class"></i>
       <span>{{ $t('menu.resource_name') }}</span>
     </router-link>
-  </li>
+  </div>
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+
 export default {
-  name: 'ResourceMenuItem',
+  name: "ResourceMenuItem",
   computed: {
-    hasPermission() {
-      // Add authorization check logic
-      return this.$store.getters['auth/hasPermission']('resource.view');
-    }
+    ...mapGetters({
+      isAdmin: "user/isAdmin"
+    })
   }
-}
+};
 </script>
+
+<style lang="scss" scoped></style>
 ```
 
 ### Register Menu Item
@@ -40,101 +49,132 @@ Add the new menu item component to the sidebar section with proper authorization
 **Location**: `young_sia_admin/resources/js/config/{resource}.js`
 
 ```javascript
-export default {
-  base: '/api/v1.0/resource-name',
-  endpoints: {
-    list: '',
-    create: '',
-    show: (id) => `/${id}`,
-    update: (id) => `/${id}`,
-    delete: (id) => `/${id}`,
-  }
-}
+export const shippingType = {
+  list: "back-office/{resource}s",
+  show: "back-office/{resource}s",
+  update: "back-office/{resource}s"
+};
 ```
 
 ## 3. Vuex Store Module
 
-**Location**: `young_sia_admin/resources/js/store/modules/{resource}.js`
+**Location**: `young_sia_admin/resources/js/store/modules/post.js`
 
 ```javascript
-import api from '@/config/{resource}'
+import { getField, updateField } from "vuex-map-fields";
+import config from "../../config";
+import AxiosInstance from "../../utils/http";
 
-const state = {
-  items: [],
-  currentItem: null,
-  loading: false,
-  pagination: {
-    current_page: 1,
-    per_page: 15,
-    total: 0
-  }
-}
+const state = () => {
+  return {
+    posts: [],
+    title: null,
+    pagination: {
+      current: 1,
+      next: null,
+      previous: null,
+      total: 0
+    }
+  };
+};
 
 const getters = {
-  items: state => state.items,
-  currentItem: state => state.currentItem,
-  loading: state => state.loading,
-  pagination: state => state.pagination
-}
+  getField
+};
 
 const mutations = {
-  SET_ITEMS(state, items) {
-    state.items = items
-  },
-  SET_CURRENT_ITEM(state, item) {
-    state.currentItem = item
-  },
-  SET_LOADING(state, loading) {
-    state.loading = loading
-  },
-  SET_PAGINATION(state, pagination) {
-    state.pagination = pagination
+  updateField,
+  setPosts(state, { posts, pagination }) {
+    state.posts = posts;
+    state.pagination = pagination;
   }
-}
+};
 
 const actions = {
-  async fetchItems({ commit }, params = {}) {
-    commit('SET_LOADING', true)
-    try {
-      const response = await this.$axios.get(api.base + api.endpoints.list, { params })
-      commit('SET_ITEMS', response.data.data)
-      commit('SET_PAGINATION', response.data.meta)
-      return response.data
-    } catch (error) {
-      throw error
-    } finally {
-      commit('SET_LOADING', false)
-    }
+  getPosts({ commit }, params) {
+    const query = new URLSearchParams(params);
+    const base = config.api.base;
+    const posts = config.api.paths.posts;
+    return new Promise((resolve, reject) => {
+      AxiosInstance.get(`${base}/${posts.list}?${query}`)
+        .then(({ data }) => {
+          commit("setPosts", {
+            posts: data.data,
+            pagination: data.pagination
+          });
+          resolve(data);
+        })
+        .catch(error => {
+          reject(error);
+        });
+    });
   },
-
-  async fetchItem({ commit }, id) {
-    commit('SET_LOADING', true)
-    try {
-      const response = await this.$axios.get(api.base + api.endpoints.show(id))
-      commit('SET_CURRENT_ITEM', response.data.data)
-      return response.data
-    } catch (error) {
-      throw error
-    } finally {
-      commit('SET_LOADING', false)
-    }
+  getPost(_, id) {
+    const base = config.api.base;
+    const posts = config.api.paths.posts;
+    return new Promise((resolve, reject) => {
+      AxiosInstance.get(`${base}/${posts.show}/${id}`)
+        .then(({ data }) => {
+          resolve(data);
+        })
+        .catch(error => {
+          reject(error);
+        });
+    });
   },
-
-  async createItem({ dispatch }, data) {
-    const response = await this.$axios.post(api.base + api.endpoints.create, data)
-    return response.data
+  createPost(_, payload) {
+    const base = config.api.base;
+    const posts = config.api.paths.posts;
+    return new Promise((resolve, reject) => {
+      AxiosInstance.post(`${base}/${posts.create}`, payload)
+        .then(response => {
+          resolve(response);
+        })
+        .catch(error => {
+          reject(error);
+        });
+    });
   },
-
-  async updateItem({ dispatch }, { id, data }) {
-    const response = await this.$axios.put(api.base + api.endpoints.update(id), data)
-    return response.data
+  updatePost(_, {id, payload}) {
+    const base = config.api.base;
+    const posts = config.api.paths.posts;
+    return new Promise((resolve, reject) => {
+      AxiosInstance.post(`${base}/${posts.edit}/${id}`, payload)
+        .then(response => {
+          resolve(response);
+        })
+        .catch(error => {
+          reject(error);
+        });
+    });
   },
-
-  async deleteItem({ dispatch }, id) {
-    const response = await this.$axios.delete(api.base + api.endpoints.delete(id))
-    return response.data
-  }
-}
+  deletePost(_, id) {
+    const base = config.api.base;
+    const posts = config.api.paths.posts;
+    return new Promise((resolve, reject) => {
+      AxiosInstance.delete(`${base}/${posts.delete}/${id}`)
+        .then(response => {
+          resolve(response);
+        })
+        .catch(error => {
+          reject(error);
+        });
+    });
+  },
+  deletePostImage(_, id) {
+    const base = config.api.base;
+    const posts = config.api.paths.posts;
+    return new Promise((resolve, reject) => {
+      AxiosInstance.post(`${base}/${posts.deleteImage}`, { id })
+        .then(response => {
+          resolve(response);
+        })
+        .catch(error => {
+          reject(error);
+        });
+    });
+  },
+};
 
 export default {
   namespaced: true,
@@ -142,7 +182,7 @@ export default {
   getters,
   mutations,
   actions
-}
+};
 ```
 
 ## 4. Router Configuration

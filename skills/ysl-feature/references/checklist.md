@@ -48,4 +48,7 @@ Before marking a feature as complete, verify:
 - [ ] Edge cases tested
 - [ ] Mobile responsive verified
 - [ ] Code follows project conventions
+- [ ] All new PHP files pass `pint`
+- [ ] All new Vue files pass `eslint`
 - [ ] No console errors or warnings
+- [ ] Suggest improvements for code quality, readability, and maintainability

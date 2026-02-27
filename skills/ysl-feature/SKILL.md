@@ -47,4 +47,6 @@ When implementing a new feature, follow this order:
 - Use Bootstrap Vue components exclusively
 - **NO** scoped styles in Vue components
 - Translate all user-facing text in all three languages
+- All new PHP files **MUST** pass `pint` before completion
+- All new Vue files **MUST** pass `eslint` before completion
 - Test all CRUD operations thoroughly

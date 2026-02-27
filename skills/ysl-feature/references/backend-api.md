@@ -12,10 +12,11 @@
 
 declare(strict_types=1);
 
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Prettus\Repository\Contracts\Transformable;
 use Prettus\Repository\Traits\TransformableTrait;
-
-namespace App\Models;
 
 class {Name} extends BaseModel implements Transformable
 {
@@ -46,6 +47,9 @@ class {Name} extends BaseModel implements Transformable
       ];
     }
 
+    /**
+     * @return BelongsTo
+     */
     public function relatedModel(): BelongsTo
     {
         return $this->belongsTo(RelatedModel::class);
@@ -60,6 +64,18 @@ class {Name} extends BaseModel implements Transformable
 - Implement `Transformable` interface if custom transformation is needed
 - Add relationships (belongsTo, hasMany, belongsToMany, etc.)
 - Use meaningful naming conventions (PascalCase for class names)
+
+## 1.1 ID Hashing (Client-facing IDs)
+
+All IDs exposed to the client are **hash strings**, not raw integers.
+
+- Use `$model->hash_id` (provided by `BaseModel`) when returning IDs.
+- Decode incoming IDs from route params or request payloads with `hashidsDecodeId()`.
+
+```php
+$hashId = $model->hash_id; // string sent to client
+$id = hashidsDecodeId($request->id); // int used in queries
+```
 
 ## 2. Create Repository Pattern
 
@@ -92,7 +108,10 @@ use Prettus\Repository\Eloquent\BaseRepository;
 
 class {Name}RepositoryEloquent extends BaseRepository implements {Name}Repository
 {
-    public function model()
+    /**
+     * @return class-string<{Name}>
+     */
+    public function model(): string
     {
         return {Name}::class;
     }
@@ -128,40 +147,68 @@ use App\Http\Requests\{Name}\Create{Name}Request;
 use App\Http\Requests\{Name}\Update{Name}Request;
 use App\Http\Resources\{Name}\{Name}Resource;
 use App\Facades\AppHelperFacade as AppHelper;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
 class {Name}Controller extends Controller
 {
+    /**
+     * @param {Name}Repository $repository
+     */
     public function __construct(
         protected {Name}Repository $repository
     ) {}
 
-    public function index()
+    /**
+     * @return AnonymousResourceCollection
+     */
+    public function index(): AnonymousResourceCollection
     {
-        $items = $this->repository->paginate();
-        return {Name}Resource::collection($items);
+        ${resources} = $this->repository->paginate();
+        return {Name}Resource::collection(${resources});
     }
 
-    public function store(Create{Name}Request $request)
+    /**
+     * @param Create{Name}Request $request
+     * @return {Name}Resource
+     */
+    public function store(Create{Name}Request $request): {Name}Resource
     {
-        $item = $this->repository->create($request->validated());
-        return new {Name}Resource($item);
+        ${resource} = $this->repository->create($request->validated());
+        return new {Name}Resource(${resource});
     }
 
-    public function show($id)
+    /**
+     * @param int|string $id
+     * @return {Name}Resource
+     */
+    public function show(int|string $id): {Name}Resource
     {
-        $item = $this->repository->find($id);
-        return new {Name}Resource($item);
+        $decodedId = hashidsDecodeId($id);
+        ${resource} = $this->repository->find($decodedId);
+        return new {Name}Resource(${resource});
     }
 
-    public function update(Update{Name}Request $request, $id)
+    /**
+     * @param Update{Name}Request $request
+     * @param int|string $id
+     * @return {Name}Resource
+     */
+    public function update(Update{Name}Request $request, int|string $id): {Name}Resource
     {
-        $item = $this->repository->update($request->validated(), $id);
-        return new {Name}Resource($item);
+        $decodedId = hashidsDecodeId($id);
+        ${resource} = $this->repository->update($request->validated(), $decodedId);
+        return new {Name}Resource(${resource});
     }
 
-    public function destroy($id)
+    /**
+     * @param int|string $id
+     * @return JsonResponse
+     */
+    public function destroy(int|string $id): JsonResponse
     {
-        $this->repository->delete($id);
+        $decodedId = hashidsDecodeId($id);
+        $this->repository->delete($decodedId);
         return response()->json(AppHelper::emptyObject());
     }
 }
@@ -173,6 +220,7 @@ class {Name}Controller extends Controller
 - Follow CRUD method names: `index`, `store`, `show`, `update`, `destroy`
 - Return API resources, not raw models
 - Use Form Requests for validation
+- Decode hash IDs for queries (`hashidsDecodeId`)
 
 ## 4. Create Form Requests
 
@@ -192,8 +240,10 @@ class Create{Name}Request extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
+     *
+     * @return bool
      */
-    public function authorize()
+    public function authorize(): bool
     {
         return true;
     }
@@ -203,7 +253,7 @@ class Create{Name}Request extends FormRequest
      *
      * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
      */
-    public function rules()
+    public function rules(): array
     {
         return [
             'field1' => ['required', 'string', 'max:255'],
@@ -242,8 +292,10 @@ class Update{Name}Request extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
+     *
+     * @return bool
      */
-    public function authorize()
+    public function authorize(): bool
     {
         return true;
     }
@@ -253,7 +305,7 @@ class Update{Name}Request extends FormRequest
      *
      * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
      */
-    public function rules()
+    public function rules(): array
     {
         return [
             'field1' => ['sometimes', 'required', 'string', 'max:255'],
@@ -297,16 +349,22 @@ use Illuminate\Http\Resources\Json\JsonResource;
 
 class {Name}Resource extends JsonResource
 {
-    public function toArray($request)
+    /**
+     * @param \Illuminate\Http\Request $request
+     * @return array<string, mixed>
+     */
+    public function toArray($request): array
     {
         return [
-            'id' => $this->id,
+            'id' => $this->hash_id,
             'field1' => $this->field1,
             'field2' => $this->field2,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
             // Include relationships if needed
             'related' => new RelatedResource($this->whenLoaded('related')),
+            // Example: hash foreign keys when returning to client
+            // 'related_id' => $this->related_id ? hashidsEncodeId($this->related_id) : null,
         ];
     }
 }
@@ -317,6 +375,7 @@ class {Name}Resource extends JsonResource
 - Use `whenLoaded()` for conditional relationships
 - Format dates consistently
 - Hide sensitive fields (passwords, tokens, etc.)
+- Always expose hash IDs (`$this->hash_id`) instead of raw integers
 
 ## 6. Create Routes
 
@@ -327,16 +386,23 @@ class {Name}Resource extends JsonResource
 
 declare(strict_types=1);
 
+use App\Constants\ConstUserRole;
 use App\Http\Controllers\V1_0\{Namespace}\{Name}Controller;
 use Illuminate\Support\Facades\Route;
 
-Route::prefix('resource-name')->group(function () {
-    Route::get('/', [{Name}Controller::class, 'index']);
-    Route::post('/', [{Name}Controller::class, 'store']);
-    Route::get('/{id}', [{Name}Controller::class, 'show']);
-    Route::put('/{id}', [{Name}Controller::class, 'update']);
-    Route::delete('/{id}', [{Name}Controller::class, 'destroy']);
-});
+$adminRole = ConstUserRole::ADMIN;
+
+Route::prefix('{resource}s')
+    ->name('{resource}s.')
+    ->middleware(['device.token', 'auth.token', "user.role:$adminRole"])
+    ->group(function () {
+        Route::get('', [{Name}Controller::class, 'index']);
+        Route::post('', [{Name}Controller::class, 'store']);
+        // {id} is a hash string sent by client
+        Route::get('{id}', [{Name}Controller::class, 'show']);
+        Route::put('{id}', [{Name}Controller::class, 'update']);
+        Route::delete('{id}', [{Name}Controller::class, 'destroy']);
+    });
 ```
 
 **Guidelines**:
@@ -354,25 +420,23 @@ Route::prefix('resource-name')->group(function () {
 <?php
 
 return [
-    'title' => 'Resource Title',
-    'create' => 'Create Resource',
-    'edit' => 'Edit Resource',
-    'delete' => 'Delete Resource',
-    
-    'fields' => [
-        'field1' => 'Field 1',
-        'field2' => 'Field 2',
-    ],
-    
-    'messages' => [
-        'created' => 'Resource created successfully',
-        'updated' => 'Resource updated successfully',
-        'deleted' => 'Resource deleted successfully',
-        'not_found' => 'Resource not found',
-    ],
-    
     'validation' => [
-        'field1_required' => 'Field 1 is required',
+        'field1' => [
+            'required' => 'Field1 is required.',
+            'in' => 'Field1 must be one of the allowed values.',
+        ],
+        'field2' => [
+            'integer' => 'Field2 must be an integer.',
+        ],
+    ],
+    'messages' => [
+        'create_success' => '{resource} created successfully.',
+        'update_success' => '{resource} updated successfully.',
+        'delete_success' => '{resource} deleted successfully.',
+        'not_found' => '{resource} not found.',
+    ],
+    'error' => [
+        'server_error' => 'An unexpected error occurred. Please try again later.',
     ],
 ];
 ```
