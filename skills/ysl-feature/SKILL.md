@@ -41,6 +41,17 @@ When implementing a new feature, follow this order:
 4. Testing and validation
 5. Documentation and translations
 
+## TODO List
+
+- [ ] Define requirements and confirm scope
+- [ ] Apply database changes and update schema docs
+- [ ] Implement backend API (models, repositories, controllers, requests, resources, routes)
+- [ ] Build admin UI (menu, routes, Vuex, views, forms)
+- [ ] Add translations (en, km, zh)
+- [ ] Validate CRUD flows and edge cases
+- [ ] Run `pint` and `eslint` ONLY on new files
+- [ ] Review @references/checklist.md before completion
+
 ## References
 
 - @references/database-schema.md — Database schema management with PostgreSQL
