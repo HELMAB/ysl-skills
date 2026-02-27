@@ -16,7 +16,7 @@ AI agent skills for the YSL project ecosystem. Provides context-aware coding ass
 | **ysl-admin** | Vue 2 + Bootstrap-Vue admin panel: Vuex 3 modules, component patterns, Vue Router 3, Vee-Validate 3 forms | ysl-design-system, ysl-i18n |
 | **ysl-seller** | Vue 3 + CoreUI seller portal: Composition API, Pinia stores, composables, Vue Router 4 with role-based access, form validation | ysl-design-system, ysl-i18n |
 | **ysl-web** | Laravel 12 public website: API gateway pattern, Guzzle HTTP client, Blade templates, device token management | — |
-| **ysl-feature** | Comprehensive guide for implementing new features across database, backend API, and frontend admin | ysl-api, ysl-admin |
+| **ysl-feature** | Comprehensive guide for implementing new features across database, backend API, and frontend admin | ysl-api, ysl-admin, ysl-i18n, ysl-design-system |
 
 ### Foundation Skills
 
@@ -72,7 +72,7 @@ An alternative for Claude Code users:
 /plugin install ysl-seller@ysl-skills ysl-design-system@ysl-skills ysl-i18n@ysl-skills
 
 # Install for new feature development
-/plugin install ysl-feature@ysl-skills
+/plugin install ysl-feature@ysl-skills ysl-api@ysl-skills ysl-admin@ysl-skills ysl-i18n@ysl-skills ysl-design-system@ysl-skills
 
 # Install code reviewer
 /plugin install ysl-code-reviewer@ysl-skills
@@ -116,6 +116,7 @@ An alternative for Claude Code users:
   - Complete CRUD implementation across all layers
   - Ensures consistency across backend and frontend
   - Includes checklist for feature completion
+  - Auto-loads `ysl-api`, `ysl-admin`, `ysl-i18n`, and `ysl-design-system`
 
 **Supporting Workflows:**
 
@@ -157,8 +158,8 @@ An alternative for Claude Code users:
 
 **Example 3: Implementing a Complete Feature**
 ```bash
-# Install feature skill (includes api and admin guidance)
-/plugin install ysl-feature@ysl-skills
+# Install feature skill (includes api, admin, i18n, and design guidance)
+/plugin install ysl-feature@ysl-skills ysl-api@ysl-skills ysl-admin@ysl-skills ysl-i18n@ysl-skills ysl-design-system@ysl-skills
 
 # Then in your code editor:
 # "Implement a complete order management feature from database to UI"

@@ -23,6 +23,15 @@ The YSL project consists of three main components:
 - **State Management**: Vuex
 - **Translations**: Three languages (en, km, zh)
 
+## Required Companion Skills
+
+When this skill is invoked, also load and follow these skills:
+
+- `ysl-api` for backend API conventions and patterns
+- `ysl-admin` for admin frontend conventions and patterns
+- `ysl-i18n` for translation workflows and locale file structure
+- `ysl-design-system` for brand standards, CSS conventions, and component structure
+
 ## Development Workflow
 
 When implementing a new feature, follow this order:
